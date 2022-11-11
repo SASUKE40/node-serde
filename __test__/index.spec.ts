@@ -1,8 +1,33 @@
 import test from 'ava'
 
-import { plus100 } from '../index'
+import { parse } from '../index'
 
-test('sync function from native code', (t) => {
-  const fixture = 42
-  t.is(plus100(fixture), fixture + 100)
+test('parse JSON obj', (t) => {
+  const jsonObj = {
+    test: 1,
+  }
+  const fixture = JSON.stringify(jsonObj)
+  t.deepEqual(parse(fixture), jsonObj)
+})
+
+test('parse JSON number', (t) => {
+  const jsonNumber = 1
+  const fixture = JSON.stringify(jsonNumber)
+  t.deepEqual(parse(fixture), jsonNumber)
+})
+
+test('parse JSON array', (t) => {
+  const jsonArray = [
+    {
+      test: 1,
+    },
+  ]
+  const fixture = JSON.stringify(jsonArray)
+  t.deepEqual(parse(fixture), jsonArray)
+})
+
+test('parse JSON error', (t) => {
+  const jsonEmptyStr = ''
+  const fixture = JSON.stringify(jsonEmptyStr)
+  t.deepEqual(parse(fixture), jsonEmptyStr)
 })

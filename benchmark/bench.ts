@@ -1,21 +1,24 @@
 import b from 'benny'
 
-import { plus100 } from '../index'
+import { parse } from '../index'
 
-function add(a: number) {
-  return a + 100
+const TEST_JSON_STRING
+
+function JSONParse(input: string) {
+  return JSON.parse(input)
 }
 
 async function run() {
   await b.suite(
-    'Add 100',
+    'JSON parse',
 
-    b.add('Native a + 100', () => {
-      plus100(10)
+    b.add('serde JSON parse', () => {
+      parse(10)
     }),
 
-    b.add('JavaScript a + 100', () => {
-      add(10)
+
+    b.add('native JSON parse', () => {
+      JSONParse(10)
     }),
 
     b.cycle(),
