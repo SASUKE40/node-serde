@@ -1,6 +1,6 @@
 {
-  "name": "@napi-rs/package-template-darwin-arm64",
-  "version": "1.0.0",
+  "name": "node-serde-darwin-arm64",
+  "version": "0.0.0",
   "os": [
     "darwin"
   ],

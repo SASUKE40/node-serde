@@ -2,7 +2,7 @@ import b from 'benny'
 
 import { parse } from '../index'
 
-const TEST_JSON_STRING
+const TEST_JSON_STRING = '{}'
 
 function JSONParse(input: string) {
   return JSON.parse(input)
@@ -11,16 +11,12 @@ function JSONParse(input: string) {
 async function run() {
   await b.suite(
     'JSON parse',
-
     b.add('serde JSON parse', () => {
-      parse(10)
+      parse(TEST_JSON_STRING)
     }),
-
-
     b.add('native JSON parse', () => {
-      JSONParse(10)
+      JSONParse(TEST_JSON_STRING)
     }),
-
     b.cycle(),
     b.complete(),
   )

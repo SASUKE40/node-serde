@@ -1,9 +1,9 @@
 {
-  "name": "serde",
+  "name": "node-serde",
   "version": "0.0.0",
-  "description": "Template project for writing node package with napi-rs",
+  "description": "Rust serde binding for Node.js. High-performance parse / stringify JSON, YAML, TOML, BSON, URL and other formats.",
   "main": "index.js",
-  "repository": "git@github.com:napi-rs/package-template.git",
+  "repository": "git@github.com:SASUKE40/node-serde.git",
   "license": "MIT",
   "keywords": [
     "napi-rs",
@@ -102,5 +102,20 @@
     "singleQuote": true,
     "arrowParens": "always"
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.2.3",
+  "optionalDependencies": {
+    "node-serde-win32-x64-msvc": "0.0.0",
+    "node-serde-darwin-x64": "0.0.0",
+    "node-serde-linux-x64-gnu": "0.0.0",
+    "node-serde-linux-x64-musl": "0.0.0",
+    "node-serde-linux-arm64-gnu": "0.0.0",
+    "node-serde-win32-ia32-msvc": "0.0.0",
+    "node-serde-linux-arm-gnueabihf": "0.0.0",
+    "node-serde-darwin-arm64": "0.0.0",
+    "node-serde-android-arm64": "0.0.0",
+    "node-serde-freebsd-x64": "0.0.0",
+    "node-serde-linux-arm64-musl": "0.0.0",
+    "node-serde-win32-arm64-msvc": "0.0.0",
+    "node-serde-android-arm-eabi": "0.0.0"
+  }
 }
